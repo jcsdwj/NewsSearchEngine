@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{.doc.Title}}</title>
+</head>
+<body>
+    <div id="basic" align="center">
+        <h1>{{.doc.Title}}</h1>
+        <p>{{.doc.Datetime}}</p>
+        <p><a href="{{.doc.Url}}" target="_blank">{{.doc.Url}}</a></p>
+    </div>
+    <hr/>
+    <div id="detail" align="center">
+        <table width="1000" border="0">
+            <tr>
+                <td style="width:1000px"><p>{{.doc.Body}}</p></td>
+            </tr>
+        </table>
+    </div>
+    <hr/>
+    <div align="center">
+        <table width="1000" border="0">
+            <tr>
+                <td style="width:1000px"><h2>推荐阅读</h2></td>
+            </tr>
+            {{range $each := .doc.Extra}}
+            <tr>
+                <td style="width:1000px"><a href="/search/{{$each.Id}}/" target="_blank">{{$each.Title}}</a></td>
+            </tr>
+            {{end}}
+        </table>
+    </div>
+</body>
+</html>

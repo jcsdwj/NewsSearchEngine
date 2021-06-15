@@ -1,0 +1,15 @@
+<div id="select">
+    <p>
+        {{if .error}}
+            <h2>你好啊</h2>
+        {{end}}
+    </p>
+    <ul>
+        <form action="/search/keys={{.keys}}" method="post">
+            <input {{.checkedone}} type="radio" name="order" id="r1" value="0" /> <label for="r1">相关度</label>
+            <input {{.checkedtwo}} type="radio" name="order" id="r2" value="1" /> <label for="r2">时间</label>
+            <input {{.checkedthree}} type="radio" name="order" id="r3" value="2" /> <label for="r3">热度</label>
+            <input type="submit" value="ok">
+        </form>
+    </ul>
+</div>

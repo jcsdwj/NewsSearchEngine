@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新闻搜索引擎(copy版)</title>
+    <style type="text/css">
+        div#doc {width:800px}
+        .pagination-page-info {
+            padding: .6em;
+            padding-left: 0;
+            width: 40em;
+            margin: .5em;
+            margin-left: 0;
+            font-size: 12px;
+        }
+        .pagination-page-info b {
+            color: black;
+            background: #6aa6ed;
+            padding-left: 2px;
+            padding: .1em .25em;
+            font-size: 150%;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            <h1>新闻搜索引擎(copy版)</h1>
+            <form name="search" action="/search" method="post">
+                <p>
+                    {{if .keys}}<!--判断是否有值 有的话就保留-->
+                        <input type="text" name="keyword" value={{.keys}}>
+                    {{else}}
+                        <input type="text" name="keyword">
+                    {{end}}
+                    <input type="submit" value="搜索">
+                </p>
+            </form>
+        </div>
+        <hr/>
+        {{if .error}}<!--判断是查到数据  查到就显示  默认显示false-->
+        <p>{{.keys}}</p>
+            {{template "high_search.html"}}
+        {{else}}
+            <p>对不起，没有您搜索的网页！</p>
+        {{end}}
+        <div id="footer">
+            <hr>
+            &copy;
+            <script type="text/javascript">
+                var today = new Date();
+                var year = today.getFullYear();
+                document.write(year)
+            </script>
+            <a href="https://github.com/CyberspaceSecurityLabSoochowUniversity" target="_blank">https://github.com/CyberspaceSecurityLabSoochowUniversity</a>
+        </div>
+
+    </div>
+</body>
+</html>
