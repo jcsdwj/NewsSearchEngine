@@ -1,5 +1,5 @@
 # 新闻搜索引擎
-(主要参考https://github.com/01joy/news-search-engine，对该项目的go改写)
+(主要参考https://github.com/01joy/news-search-engine, 对该项目的go改写)
 
 ## 整体结构图
 ![image](https://github.com/jcsdwj/NewsSearchEngine/blob/master/mdimg/1.jpg)
